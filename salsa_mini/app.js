@@ -3,7 +3,7 @@
 
 App({
   global_data: {
-    server_url: 'https://41375612.qcloud.la/aishangsalsa/', // 服务器地址
+    server_url: 'https://41375612.qcloud.la/aishangsalsa/test/', // 服务器地址
     userInfo: null, // 用户信息
     systemInfo: null, // 系统信息
     dancer_list: null, // 报到舞友列表
@@ -33,6 +33,14 @@ App({
         }
       },
     });*/
+
+    wx.request({
+      url: this.global_data.server_url + 'php/testMongo.php',
+      method: "POST",
+      success: function (res) {
+        console.log(res.data);
+      },
+    });
 
     // 监听网络状态变化
     wx.onNetworkStatusChange(function (res) {

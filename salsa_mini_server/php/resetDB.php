@@ -10,7 +10,7 @@ Licensed under The GNU General Public License 3.0
 Redistributions of files must retain the above copyright notice.
 *******************************************************************************/
 
-include('config.php');
+include_once('config.php');
 
 $mongo = new MongoClient();
 $db = $mongo->$dance_db;
@@ -46,8 +46,8 @@ $doc_dance = array(
 // 请手动填写小程序appid和小程序密匙
 $doc_wxmini = array(
 	"name" => "wxmini",
-	"appid" => "", // 小程序appid
-	"secret" => "", // 小程序密匙
+	"appid" => "wxd9e4e5372a291945", // 小程序appid
+	"secret" => "946b0c3919ba7e65edac07612cb4e681", // 小程序密匙
 	"shared" => 0 // 分享次数
 );
 $db->globaldata->insert($doc_dance);
